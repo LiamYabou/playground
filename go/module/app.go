@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/LiamYabou/module_test/pkg/db"
+	"github.com/LiamYabou/playground/go/module/pkg/db"
 
 	_ "github.com/lib/pq"
 )
