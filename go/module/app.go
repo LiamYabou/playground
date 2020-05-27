@@ -16,4 +16,12 @@ func main() {
 	} else {
 		fmt.Println("Connect the DB succefully!")
 	}
+	var name string
+	stmt := "select name from categories where id=2"
+	err = dbConn.QueryRow(stmt).Scan(&name)
+	if err != nil {
+		fmt.Errorf("Could not fetch a row, err: %s", err)
+	} else {
+		fmt.Printf("name: %s\n", name)
+	}
 }
