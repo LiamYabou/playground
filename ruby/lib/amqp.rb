@@ -1,0 +1,3 @@
+module AMQP
+
+end
