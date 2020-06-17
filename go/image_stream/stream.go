@@ -16,7 +16,10 @@ func main() {
         log.Fatal(e)
     }
     defer response.Body.Close()
-    fmt.Printf("size: %v\n", getSize(response.Body))
+    // fmt.Printf("size: %v\n", getSize(response.Body))
+    buf := new(bytes.Buffer)
+    buf.ReadFrom(response.Body)
+    fmt.Printf("type: %v\n", http.DetectContentType(buf.Bytes()))
 }
 
 func getSize(stream io.Reader) int {
